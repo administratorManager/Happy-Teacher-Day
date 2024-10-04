@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport meta tag for responsiveness -->
+    <title>Teacher Card Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body class="text-center">
+    <h1 class="headline">تهنئكم وزراة التعليم بحلول عيد المعلم</h1>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 mb-4"> <!-- Adjusted column classes for responsiveness -->
+                <div class="card card-select" id="verticalCard" onclick="selectCard('vertical')">
+                    <img src="images/WhatsApp Image 2024-10-04 at 17.14.56_e1066db8.jpg" class="card-img-bottom" alt="Vertical Card">
+                    <div class="card-body">
+                        <h5 class="card-title">طولي</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-4"> <!-- Adjusted column classes for responsiveness -->
+                <div class="card card-select" id="horizontalCard" onclick="selectCard('horizontal')">
+                    <img src="images/WhatsApp Image 2024-10-04 at 17.14.56_e1066db8.jpg" class="card-img-top" alt="Horizontal Card">
+                    <div class="card-body">
+                        <h5 class="card-title">عرضي</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <input type="text" class="form-control text-center" id="nameInput" placeholder="أدخل اسمك" />
+        </div>
+
+        <div class="row align-items-center mb-4 justify-content-center">
+            <div class="col-auto">
+                <input type="hidden" id="verificationInput" />
+                <span id="generatedNumber"></span>
+            </div>
+            <div class="col-auto d-flex flex-column align-items-center">
+                <a href="#" onclick="resetForm(event)" class="btn">
+                    <img src="images/reset (1).png" alt="Reset" class="icon mb-2">
+                </a>
+                <a href="#" onclick="readAloud(event)" class="btn">
+                    <img src="images/sound.png" alt="Sound" class="icon">
+                </a>                
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control" id="userInput" placeholder="أدخل رمز التحقق" />
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button class="btn btn-success px-5" id="generateButton" onclick="downloadCard()">أنشئ بطاقتك</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
